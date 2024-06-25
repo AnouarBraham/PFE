@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home_styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="home.js"></script>
+    <script src="darkmode.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="anomaly_detection.js" defer></script>
+
+    <title>Dashboard</title>
+</head>
+<body class="body">
+    <section class="header">
+        <div class="logo">
+            <i class="ri-menu-line menu" id="menuIcon"></i>
+            <h2><span>KPI</span> Dashboard</h2>
+            <div id="clock" class="clock"></div> <!-- Added clock div -->
+        </div>
+        <div class="header--items">
+            <i class="ri-moon-line moon"></i>
+            <i class="ri-notification-2-line"></i>
+            <i class="ri-feedback-line" id="feedbackIcon"></i> 
+            <div class="profile" id="profile">
+                <img src="" alt="">
+                <input type="file" id="profile-image-upload" accept="image/*">
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="sidebar">
+            <ul class="sidebar--items">
+                <li>
+                    <a href="home.html" class="active" onmouseover="removeActiveClass()">
+                        <span class="icon"><i class="ri-bar-chart-line"></i></span>
+                        <div class="sidebar--item">Overview</div>
+                    </a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropdown-btn">
+                            <span class="icon"><i class="ri-bar-chart-2-line"></i></span>
+                            <div class="sidebar--item" id="dashboardItem">Dashboards</div>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="dashboardStore.html">Stores</a>
+                            <a href="dashboardProducts.html">Products</a>
+                            <a href="dashboardSales.html">Sales</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <span class="icon"><i class="ri-user-line"></i></span>
+                        <div class="sidebar--item">Profile</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <span class="icon"><i class="ri-notification-2-line"></i></span>
+                        <div class="sidebar--item">Notifications</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html" id="settingsLink">
+                        <span class="icon"><i class="ri-settings-3-line"></i></span>
+                        <div class="sidebar--item">Settings</div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar--bottom--items">
+                <li>
+                    <a href="help.html">
+                        <span class="icon"><i class="ri-question-line"></i></span>
+                        <div class="sidebar--item">Help</div>
+                    </a>
+                </li>
+                <li>
+                    <a id="logoutBtn" href="#">
+                        <span class="icon"><i class="ri-logout-box-r-line"></i></span>
+                        <div class="sidebar--item">Logout</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--container">
+            <div class="section--title">
+                <h3 class="title">Welcome back , <span id="userName"></span></h3>
+            </div>
+            <div class="cards">
+                <div class="card card-1">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class="ri-shopping-bag-2-line"></i></span>
+                        <span>Sales</span>
+                        <div class="dropdown">
+                            <select id="seasonsDropdown">
+                                <!-- Options will be dynamically added here -->
+                            </select>
+                        </div>
+                    </div>
+                    <h3 class="card--value" id="totalSales"></h3>
+                    <h5 class="less">Total sales amount</h5>
+                    <div class="chart">
+                        <!-- Add chart if needed -->
+                    </div>
+                </div>
+                
+                <div class="card card-2">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class="ri-gift-line"></i></span>
+                        <span>Orders</span>
+                    </div>
+                    <h3 class="card--value" id="ordersCount"></h3>
+                    <h5 class="less">Number of orders</h5>
+                    <div class="chart">
+                        <!-- Add chart if needed -->
+                    </div>
+                </div>
+                <div class="card card-3">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class="ri-handbag-line"></i></span>
+                        <span>Products</span>
+                    </div>
+                    <h3 class="card--value" id="productCount"></h3>
+                    <h5 class="less">Number of different products</h5>
+                    <div class="chart">
+                        <!-- Add chart if needed -->
+                    </div>
+                </div>
+                <div class="card card-4">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class="ri-store-line"></i></span>
+                        <span>Stores</span>
+                    </div>
+                    <h3 class="card--value" id="storeCount"></h3>
+                    <h5 class="less">Number of stores</h5>
+                    <div class="chart">
+                        <!-- Add chart if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="target-vs-sales--container">
+                <div class="section--title">
+                    <h3 class="title">Sales Through the Years</h3>
+                    <div class="sales--value">
+                        
+                    </div>
+                </div>
+                <div class="target--vs--sales">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="table">
+                <div class="section--title">
+                    <h3 class="title">Top products</h3>
+                </div>
+                <div class="top-products--container">
+                    <!-- Top products tiles will be dynamically added here -->
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+    
+    
+    <div id="notificationMenu" class="notification-menu">
+        <h3 class="notifs">Notifications</h3>
+        <br>
+        <ul id="notificationList">
+            <!-- Notifications will be inserted here dynamically -->
+        </ul>
+    </div>
+    
+    
+
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p id="enter-message">Enter your Feedback:</p>
+            <textarea id="messageInput" placeholder="Enter your message..." style="width: 500px; height: 100px;"></textarea>
+          <button id="sendMessageButton">Send</button>
+        </div>
+      </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+
+</body>
+</html>

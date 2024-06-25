@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="admin-dashboard.css">
+  <title>Admin Interface</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Admin Interface</h1>
+    <div>
+        <button class="button" id="manageUsersBtn">Manage Users</button>
+        <button class="button" id="Pending">Pending Users</button>
+        <a href="home.html" class="button">View Website</a>
+        <button class="button" id="notifyUsersBtn">Notify Users</button>
+        <a href="feedback.html" class="button">Feedbacks</a> <!-- Add the Feedbacks button -->
+        <button class="button" id="logout">Log out</button>
+
+        <div id="userNotifyEmail" style="display: none;">
+          <select id="recipientEmail">
+              <!-- Populate this dropdown with the list of user emails -->
+          </select>
+          <textarea id="message" placeholder="Type your message..."></textarea>
+          <button class="send-email-btn">Send Notification</button>
+      </div>
+    </div>
+
+    <!-- User Management Section (Initially Hidden) -->
+    <div id="userManagementSection" style="display: none;">
+        <h2>User Management</h2>
+
+        <!-- User List Table -->
+        <table id="userListTable">
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                    <th>Action</th> <!-- Add a column for actions -->
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+  </div>
+
+  <script src="admin-dashboard.js"></script>
+</body>
+</html>
+

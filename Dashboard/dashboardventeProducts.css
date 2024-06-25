@@ -1,0 +1,591 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+/* Header Styles */
+.header-container {
+    background-color: #007bff; /* Primary blue color */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Adjusting to a column layout */
+    align-items: center; /* Centering items horizontally */
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px; /* Adding margin to separate logo from text */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Main Content Styles */
+.section {
+    margin-bottom: 40px;
+    background-color: #fff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Charts Section Styles */
+.chart-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 100px;
+    gap: 10px;
+}
+
+
+
+
+
+
+
+#product-table-container{
+    grid-column: 1 / 1; 
+    grid-row: 1 / 6; 
+    border: 1px solid transparent; /* Border color matches the chart color */
+    border-radius: 2px; /* Rounded border corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition effect */
+}
+
+
+
+#product-table-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    border-color: rgb(1, 243, 243); /* Light border color on hover */
+}
+
+
+#map {
+    grid-column: 1 / 4; 
+    grid-row: 1 / 6;
+    width:350px;
+    border: 1px solid transparent; /* Border color matches the chart color */
+    border-radius: 2px; /* Rounded border corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition effect */
+}
+
+#map:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    border-color: rgb(153, 186, 186); /* Light border color on hover */
+}
+
+
+
+
+
+
+#chart:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    border-color: lightblue; /* Light border color on hover */
+}
+
+
+/* Total Sales Chart Container */
+#stores_chart_div {
+    grid-column: 4 / 4; 
+    grid-row: 1 / 6;
+    border: 1px solid transparent; /* Transparent border to start */
+    border-radius: 2px; /* Rounded border corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition effect */
+}
+
+
+
+#stores_chart_div:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    border-color: lightyellow; /* Light border color on hover */
+}
+
+
+#search-container{
+    margin-top:520px;
+}
+
+
+#search-input {
+    margin-top:10px;
+    margin-bottom: 10px;
+    margin-left:2px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    outline: none; /* Remove default focus outline */
+  }
+  
+  #search-input::placeholder {
+    color: #999; /* Placeholder text color */
+  }
+  
+  #search-input:hover,
+  #search-input:focus {
+    border-color: #555;
+  }
+
+
+#total-quantity-sold-chart-container {
+    grid-column: 1 / 6; 
+    grid-row: 6 / 9;
+    border: 1px solid transparent; /* Transparent border to start */
+    border-radius: 2px; /* Rounded border corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition effect */
+}
+
+
+
+#avg_chart{
+    grid-column: 2 / 4; 
+    grid-row: 1 / 6;
+    border: 1px solid transparent; /* Transparent border to start */
+    border-radius: 2px; /* Rounded border corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition effect */
+}
+
+
+#avg_chart:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    border-color: rgb(255, 184, 182); /* Light border color on hover */
+}
+
+
+
+
+/* All Products Chart Container */
+#sales-by-day-of-week-table-container {
+    grid-column: 1 / 3; 
+    grid-row: 9 / 14;
+    border: 1px solid transparent; /* Transparent border to start */
+    border-radius: 2px; /* Rounded border corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition effect */
+}
+
+#sales-by-day-of-week-table-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    border-color: lightgreen; /* Light border color on hover */
+}
+
+
+
+
+#libtailles-chart-container {
+    grid-column: 1 / 3; 
+    grid-row: 14/ 18;
+    border: 1px solid transparent; /* Transparent border to start */
+    border-radius: 2px; /* Rounded border corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition effect */
+}
+
+#libtailles-chart-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    border-color: lightcyan; /* Light border color on hover */
+}
+
+
+
+
+
+
+/* Profit Margin Chart Container */
+#returns-chart-container {
+    grid-column: 3 / 6; 
+    grid-row: 9 / 14;
+    border: 1px solid transparent; /* Transparent border to start */
+    border-radius: 2px; /* Rounded border corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition effect */
+}
+
+#returns-chart-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    border-color: lightpink; /* Light border color on hover */
+}
+
+/* Order Count Chart Container */
+#order-count-chart-container {
+    grid-column: 1 / 3; 
+    grid-row: 12 / 14;
+    border: 1px solid transparent; /* Transparent border to start */
+    border-radius: 2px; /* Rounded border corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition effect */
+}
+
+#order-count-chart-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    border-color: rgb(255, 220, 206); /* Light border color on hover */
+}
+
+/* Store Count Chart Container */
+#storeCountChart {
+    grid-column: 3 / 6; 
+    grid-row: 12 / 14;
+    border: 1px solid transparent; /* Transparent border to start */
+    border-radius: 2px; /* Rounded border corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition effect */
+}
+
+#storeCountChart:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    border-color: lightgray; /* Light border color on hover */
+}
+
+/* Total Products Chart Container */
+#total-products-chart-container {
+    grid-column: 3 / 6; 
+    grid-row: 14 / 18;
+    border: 1px solid transparent; /* Transparent border to start */
+    border-radius: 2px; /* Rounded border corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition effect */
+}
+
+#total-products-chart-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    border-color: lightskyblue; /* Light border color on hover */
+}
+
+/* Total Quantity Chart Container */
+
+
+
+
+.slate-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between elements */
+    gap: 20px; /* Add some space between elements */
+    width: 100%;
+}
+
+
+
+.store-name {
+    color: #007bff; /* Change the color of the store name */
+    font-weight: bold; /* Make the store name bold */
+}
+
+.store-value {
+    
+    color:#333;
+}
+
+.store-label {
+    color: #007bff; /* Same color as the store name */
+}
+
+
+
+
+
+
+
+
+
+.orders-icon,
+.product-icon,
+.sales-icon {
+    position: absolute;
+    top: 10px; /* Adjust top position as needed */
+    right: 10px;
+}
+
+.orders-icon i,
+.product-icon i,
+.sales-icon i {
+    font-size: 100px; /* Adjust icon size as needed */
+}
+
+
+
+
+
+
+
+
+
+
+/* KPIs Section Styles */
+.kpi-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.kpi-card {
+    background-color: #007bff; /* Pink color */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 0 calc(50% - 20px);
+}
+
+/* Settings Section Styles */
+.settings-options {
+    margin-bottom: 20px;
+}
+
+
+
+
+/* Adjust the position to make it appear next to the "Charts" title */
+.section.charts {
+    position: relative;
+}
+
+.section.charts h2 {
+    display: inline-block;
+    position: relative;
+    margin-right: 50px; /* Adjust the distance between the title and the button */
+}
+
+
+
+
+
+
+.chart-menu {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+    display: none;
+}
+
+.chart-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.chart-menu ul li {
+    margin-bottom: 10px;
+}
+
+.chart-menu button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.chart-menu button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+.chart {
+    position: relative;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading img {
+    width:100px;
+    height: 98px;
+}
+
+
+/* Export Button Styles */
+.export-btn {
+    background-color: #007bff; /* Primary blue color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.export-btn:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+
+
+
+
+
+
+.store-table-container,.sales-table-container {
+    max-height: 500px; /* Example max height for container */
+    overflow-y: auto; /* Enable vertical scroll if content exceeds container height */
+  }
+
+
+
+  
+  #storeTable,#salesTable{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #storeTable th,
+  #storeTable td,
+  #salesTable th,
+  #salesTable td{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #storeTable th,#salesTable th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+  
+  #storeTable tbody tr,#salesTable tbody tr {
+    cursor: pointer; /* Change cursor to pointer when hovering over rows */
+  }
+  
+  #storeTable tbody tr:hover,#salesTable tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  #storeTable tbody tr:hover td,#salesTable tbody tr:hover td {
+    background-color: #f9f9f9; /* Highlight row when hovering */
+  }
+  
+  #storeTable tbody tr td,#salesTable tbody tr td {
+    cursor: pointer; /* Change cursor to pointer when hovering over cells */
+  }
+
+
+
+
+  #countryFilter {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  #countryFilter option {
+    padding: 8px;
+  }
+  
+  #countryFilter:hover,
+  #countryFilter:focus {
+    border-color: #555;
+  }
+  
+  #countryFilter option:hover {
+    background-color: #f9f9f9;
+  }
+  
+
+
+  #searchInput {
+    margin-top:10px;
+    margin-bottom: 10px;
+    margin-left:2px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    outline: none; /* Remove default focus outline */
+  }
+  
+  #searchInput::placeholder {
+    color: #999; /* Placeholder text color */
+  }
+  
+  #searchInput:hover,
+  #searchInput:focus {
+    border-color: #555;
+  }
+  
+
+  label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333; /* Adjust the color to match your design */
+    margin-bottom: 8px; /* Add some space below the label */
+  }
+  
+  
+
+  #botact,#exportact{
+    color:#007bff;
+}
+
+
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:focus {
+    outline: none;
+}
+
+.activate-bot-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.activate-bot-btn:hover {
+    background-color: #0056b3;
+}
+
+.activate-bot-btn:active {
+    background-color: #004494;
+}
+  

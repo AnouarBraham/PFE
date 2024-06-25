@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home_styles.css">
+    <link rel="stylesheet" href="help.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="home.js"></script>
+    <script src="darkmode.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="anomaly_detection.js" defer></script>
+
+    <title>Dashboard</title>
+</head>
+<body class="body">
+    <section class="header">
+        <div class="logo">
+            <i class="ri-menu-line menu" id="menuIcon"></i>
+            <h2><span>KPI</span> Dashboard</h2>
+        </div>
+        <div class="header--items">
+            <i class="ri-moon-line moon"></i>
+            <i class="ri-notification-2-line"></i>
+            <i class="ri-feedback-line" id="feedbackIcon"></i> 
+            <div class="profile" id="profile">
+                <img src="" alt="">
+                <input type="file" id="profile-image-upload" accept="image/*">
+            </div>
+        </div>
+
+        <div id="notificationMenu" class="notification-menu">
+            <h3 class="notifs">Notifications</h3>
+            <br>
+            <ul id="notificationList">
+                <!-- Notifications will be inserted here dynamically -->
+            </ul>
+        </div>
+    </section>
+    <section class="main">
+        <div class="sidebar">
+            <ul class="sidebar--items">
+                <li>
+                    <a href="home.html" class="active" onmouseover="removeActiveClass()">
+                        <span class="icon"><i class="ri-bar-chart-line"></i></span>
+                        <div class="sidebar--item">Overview</div>
+                    </a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropdown-btn">
+                            <span class="icon"><i class="ri-bar-chart-2-line"></i></span>
+                            <div class="sidebar--item" id="dashboardItem">Dashboards</div>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="dashboardStore.html">Stores</a>
+                            <a href="dashboardProducts.html">Products</a>
+                            <a href="dashboardSales.html">Sales</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <span class="icon"><i class="ri-user-line"></i></span>
+                        <div class="sidebar--item">Profile</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <span class="icon"><i class="ri-notification-2-line"></i></span>
+                        <div class="sidebar--item">Notifications</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html" id="settingsLink">
+                        <span class="icon"><i class="ri-settings-3-line"></i></span>
+                        <div class="sidebar--item">Settings</div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar--bottom--items">
+                <li>
+                    <a href="help.html">
+                        <span class="icon"><i class="ri-question-line"></i></span>
+                        <div class="sidebar--item">Help</div>
+                    </a>
+                </li>
+                <li>
+                    <a id="logoutBtn" href="#">
+                        <span class="icon"><i class="ri-logout-box-r-line"></i></span>
+                        <div class="sidebar--item">Logout</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    <div class="container">
+        <h1 id="help-h1"><i class="fas fa-question-circle"></i> Help</h1>
+        <p id="help-p">This is the help page. You can find assistance and support here.</p>
+        
+        <h2 id="help-h2"><i class="fas fa-chart-line"></i> Dashboard</h2>
+        <p>The dashboard displays various metrics and statistics about KPIs (Key Performance Indicators). You can find information about sales, stores, products and more.</p>
+        <details>
+            <summary>How do I navigate the dashboard? <i class="fas fa-chevron-down"></i></summary>
+            <p id="help-p">To navigate the dashboard, use the sidebar on the left side of the screen. Click on the different sections to view various data and information.</p>
+        </details>
+        
+        <h2 id="help-h2"><i class="fas fa-user-circle"></i> User Profile </h2>
+        <p id="help-p">If you need help with your user profile, you can find assistance here.</p>
+        <details>
+            <summary>How can I change my profile picture? <i class="fas fa-chevron-down"></i></summary>
+            <p>You can change your profile picture from the main menu on the first page. Click on your profile icon, then select a picture to upload as a new image.</p>
+        </details>
+
+        <details>
+            <summary>How can I change my profile informations? <i class="fas fa-chevron-down"></i></summary>
+            <p>You can change your profile's firstname, lastname, email and password from the profile page on the sidebar on the left.</p>
+        </details>
+
+
+        <h2 id="help-h2"><i class="fas fa-moon"></i> Dark Mode</h2>
+        <p id="help-p">Dark mode provides a different color scheme for the website, reducing eye strain in low-light environments.</p>
+        <details>
+            <summary>How do I activate dark mode? <i class="fas fa-chevron-down"></i></summary>
+            <p>To activate dark mode, click on the moon icon located next to the notificaton icon on the top of the page.</p>
+        </details>
+    </div>
+
+    <script>
+        const details = document.querySelectorAll('details');
+        details.forEach(detail => {
+            detail.addEventListener('click', () => {
+                detail.classList.toggle('open');
+            });
+        });
+    </script>
+    
+    
+    
+
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p id="enter-message">Enter your Feedback:</p>
+            <textarea id="messageInput" placeholder="Enter your message..." style="width: 500px; height: 100px;"></textarea>
+          <button id="sendMessageButton">Send</button>
+        </div>
+      </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+
+</body>
+</html>

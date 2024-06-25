@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home_styles.css">
+    <link rel="stylesheet" href="notifications.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="home.js"></script>
+    <script src="darkmode.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="anomaly_detection.js" defer></script>
+
+    <title>Dashboard</title>
+</head>
+<body class="body">
+    <section class="header">
+        <div class="logo">
+            <i class="ri-menu-line menu" id="menuIcon"></i>
+            <h2><span>KPI</span> Dashboard</h2>
+        </div>
+        <div class="header--items">
+            <i class="ri-moon-line moon"></i>
+            <i class="ri-notification-2-line"></i>
+            <i class="ri-feedback-line" id="feedbackIcon"></i> 
+            <div class="profile" id="profile">
+                <img src="" alt="">
+                <input type="file" id="profile-image-upload" accept="image/*">
+            </div>
+        </div>
+
+        <div id="notificationMenu" class="notification-menu">
+            <h3 class="notifs">Notifications</h3>
+            <br>
+            <ul id="notificationList">
+                <!-- Notifications will be inserted here dynamically -->
+            </ul>
+        </div>
+    </section>
+    <section class="main">
+        <div class="sidebar">
+            <ul class="sidebar--items">
+                <li>
+                    <a href="home.html" class="active" onmouseover="removeActiveClass()">
+                        <span class="icon"><i class="ri-bar-chart-line"></i></span>
+                        <div class="sidebar--item">Overview</div>
+                    </a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropdown-btn">
+                            <span class="icon"><i class="ri-bar-chart-2-line"></i></span>
+                            <div class="sidebar--item" id="dashboardItem">Dashboards</div>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="dashboardStore.html">Stores</a>
+                            <a href="dashboardProducts.html">Products</a>
+                            <a href="dashboardSales.html">Sales</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <span class="icon"><i class="ri-user-line"></i></span>
+                        <div class="sidebar--item">Profile</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <span class="icon"><i class="ri-notification-2-line"></i></span>
+                        <div class="sidebar--item">Notifications</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html" id="settingsLink">
+                        <span class="icon"><i class="ri-settings-3-line"></i></span>
+                        <div class="sidebar--item">Settings</div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar--bottom--items">
+                <li>
+                    <a href="help.html">
+                        <span class="icon"><i class="ri-question-line"></i></span>
+                        <div class="sidebar--item">Help</div>
+                    </a>
+                </li>
+                <li>
+                    <a id="logoutBtn" href="#">
+                        <span class="icon"><i class="ri-logout-box-r-line"></i></span>
+                        <div class="sidebar--item">Logout</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    <div class="container">
+        <h1>Notifications</h1>
+        <ul id="notifications-list">
+            <!-- Notifications will be inserted here dynamically -->
+        </ul>
+    </div>
+
+
+
+    
+    
+
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p id="enter-message">Enter your Feedback:</p>
+            <textarea id="messageInput" placeholder="Enter your message..." style="width: 500px; height: 100px;"></textarea>
+          <button id="sendMessageButton">Send</button>
+        </div>
+      </div>
+
+      
+    
+    
+    <script src="notifications.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+
+</body>
+</html>

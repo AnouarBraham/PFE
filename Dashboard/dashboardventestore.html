@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard_Ventes_stores.css">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.min.css">
+    <script src="anomaly_detection.js" defer></script>
+
+    
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="Dashboard Logo" class="logo">
+            <h1>Welcome to Your Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="#charts">Charts</a></li>
+                    <li><a href="#kpis">KPIs</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <!-- Add this input field for the search bar -->
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="export-container">
+            <section id="charts" class="section charts">
+
+                <div class="slate-container">
+                    <div id="s1">
+                        <h3>Orders count :</h3>
+                        <h3 id="slate1"></h3>
+                        <span class="orders-icon"><i class="ri-handbag-line"></i></span>
+                    </div>
+                    <div id="s2">
+                        <h3>Products :</h3>
+                        <h3 id="slate2"></h3>
+                        <span class="product-icon"><i class="ri-shopping-cart-line"></i></span>
+                    </div>
+                    <div id="s3">
+                        <h3>Sales :</h3>
+                        <h3 id="slate3"></h3>
+                        <span class="sales-icon"><i class="ri-coins-line"></i></span>
+                    </div>
+                    
+                </div>
+
+
+                <div class="chart-container">
+
+
+                    <div class="chart_div">  
+                        <div class="sales-table-container">
+                            <table id="salesTable">
+                                <thead>
+                                    <tr>
+                                        <th>Family</th>
+                                        <th>Total Sales</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="salesTableBody">
+                                    <!-- Sales data by family will be dynamically populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>   
+
+                    <!-- ASP Chart Container -->
+                    <div id="loading-asp" class="loading">
+                        <img src="loading.gif" alt="Loading" />
+                    </div>
+                    <div id="asp-kpi-chart-container" ></div>
+
+
+                    <!-- Total Quantity Sold Chart Container -->
+                    <div id="loading-total-quantity" class="loading">
+                        <img src="loading.gif" alt="Loading" />
+                    </div>
+                    <div id="total-quantity-chart-container"></div>
+
+
+                    <!-- All Products Chart Container -->
+                    <div id="loading-all-products" class="loading">
+                        <img src="loading.gif" alt="Loading" />
+                    </div>
+                    <div id="all-products-chart-container"></div>
+
+                    <div id="loading-store-count" class="loading">
+                        <img src="loading.gif" alt="Loading" />
+                    </div>
+
+
+                    <div id="loading-total-products" class="loading">
+                        <img src="loading.gif" alt="Loading" />
+                    </div>
+
+                    <div id="total-products-chart-container"></div>
+    
+
+
+                    <div id="totalSalesChartDiv"></div>
+                    <div id="totalQuantityChartDiv"></div>
+
+
+
+                    <div id="transactions_div"></div>
+
+
+
+                    <div id="storeCountChart"></div>
+            
+                    
+
+
+
+                    <div id="map">
+                        <div class="store-filter-container">
+                          <label for="countryFilter">Filter by Country:</label>
+                          <select id="countryFilter">
+                            <option value="all" >All</option>
+                            <option value="france">France</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="spain">Spain</option>
+                          </select>
+                        </div>
+                        <div class="store-table-container">
+                          <input type="text" id="searchInput" placeholder="Search store...">
+                          <table id="storeTable">
+                            <thead>
+                              <tr>
+                                <th>Stores</th>
+                              </tr>
+                            </thead>
+                            <tbody id="storeTableBody">
+                              <!-- Store rows will be dynamically populated here -->
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+    
+    
+    
+
+                    <div id="slate1"></div>
+
+                </div>
+
+            </section>
+            
+            <section id="kpis" class="section kpis">
+                <h2>Key Performance Indicators (KPIs)</h2>
+                <div class="kpi-card-container" id="kpi-card-container"></div>
+            </section>
+        </div>
+
+        <section id="settings" class="section settings">
+            <h2>Settings</h2>
+            <div class="settings-options">
+                <h3 id="botact">Initiate Forecast</h3>
+                <button id="activate-bot-btn" class="activate-bot-btn">Initiate Forecast</button>
+            </div>
+            <div class="export-btn-container">
+                <h3 id="exportact">Export Data as PDF</h3>
+                <button id="export-btn" class="export-btn">Export Data as PDF</button>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+    <script src="dashboardVentesStore.js"></script>
+</body>
+</html>

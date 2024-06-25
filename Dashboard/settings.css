@@ -1,0 +1,205 @@
+/* Body and container styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+input[type="checkbox"] {
+    margin-left: 5px; /* Adjust the margin to move checkbox closer */
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+input[type="checkbox"]:checked::before {
+    content: "\2713";
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Clock styles */
+.clock {
+    position: relative;
+    margin: 50px auto; /* Adjust the margin as needed */
+    width: 200px;
+}
+
+.clock-face {
+    display: block;
+    width: 100%; /* Adjust according to clock face image size */
+    margin-bottom: 10px;
+    border-radius: 50%; /* Make clock face circular */
+    background: radial-gradient(circle, #f9f9f9, #ddd); /* Gradient background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.hand {
+    position: absolute;
+    background-color: #333; /* Default color for clock hands */
+    left: 50%; /* Position at the center */
+    transform-origin: bottom center;
+}
+
+/* Styling for hour hand */
+.hour {
+    width: 6px;
+    height: 40px;
+    transform: rotate(90deg);
+    left: calc(50% - 5px); /* Position at the center */
+    top: calc(50% - 40px); /* Position at the center */
+    background-color: #555; /* Hour hand color */
+}
+
+/* Styling for minute hand */
+.minute {
+    width: 4px;
+    height: 60px;
+    transform: rotate(180deg);
+    left: calc(49.8% - 4px); /* Position at the center */
+    top: calc(50% - 60px); /* Position at the center */
+    background-color: #777; /* Minute hand color */
+}
+
+/* Styling for second hand */
+.second {
+    width: 2px;
+    height: 70px;
+    transform: rotate(270deg);
+    left: calc(50% - 2px); /* Position at the center */
+    top: calc(50% - 70px); /* Position at the center */
+    background-color: #c00; /* Second hand color */
+}
+
+/* Styling for the center circle */
+.center-circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #333; /* Circle color */
+    border-radius: 50%; /* Make it a circle */
+    left: 49%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20; /* Ensure it's above the clock hands */
+}
+
+
+/* New styles for the notification option */
+.notification-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; /* Adjust as needed */
+    margin-top:50px;
+}
+
+
+/* CSS */
+#notificationList li {
+    position: relative; /* Set the position of the list items to relative */
+}
+
+.remove-button {
+    position: absolute; /* Position the remove button relative to its parent notification */
+    top: 0; /* Align the button to the top of the notification */
+    right: 5px; /* Adjust the right offset as needed */
+    background-color: #007bff;
+    border: 1px solid #ced4da;
+    color: white;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the total width */
+    padding: 5px 10px; /* Increase padding for bigger button */
+    font-size: 12px; /* Increase font size for bigger button */
+    margin-top: 7px;
+    margin-left:10px;
+}
+
+
+
+.new-notification::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #FF0000;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+
+.notification-option label {
+    margin-right: 10px; /* Adjust spacing between label and checkbox */
+
+}
+
+
+#notification-toggle{
+    margin-top:5px;
+    margin-bottom:12px;
+    margin-left:20px;
+}

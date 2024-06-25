@@ -1,0 +1,167 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s; /* Smooth transition for background color change */
+}
+
+.container {
+  max-width: 850px;
+  margin: 0px 100px 100px 480px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s; /* Smooth transition for box-shadow */
+}
+
+#profile-h1, .profile-h2{
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 20px;
+  transition: color 0.3s; /* Smooth transition for text color change */
+}
+
+.profile-info {
+  margin-top: 50px;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, background-color 0.3s; /* Smooth transitions for box-shadow and background color */
+}
+
+.profile-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.profile-details p {
+  margin: 0;
+  transition: color 0.3s; /* Smooth transition for text color change */
+}
+
+.profile-details strong {
+  color: #333;
+}
+
+
+.profile-description textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: none;
+  margin-top: 10px;
+}
+
+.profile-description button {
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for button background color change */
+}
+
+.profile-description button:hover {
+  background-color: #0056b3;
+}
+
+#interestList {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.remove-account {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#removeAccountBtn {
+  background-color: #ff6666;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for button background color change */
+}
+
+#removeAccountBtn:hover {
+  background-color: #cc0000;
+}
+
+
+
+#changeEmail,#changelastName,#changefirstName,#changePasswordLink {
+  margin-left:10px;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+#changePasswordLink:hover,#changeEmail:hover,#changelastName:hover,#changefirstName:hover {
+  text-decoration: underline;
+  background-color:#0056b3;
+}
+
+
+.notification-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px; /* Adjust as needed */
+  margin-top:50px;
+}
+
+
+/* CSS */
+#notificationList li {
+  position: relative; /* Set the position of the list items to relative */
+}
+
+.remove-button {
+  position: absolute; /* Position the remove button relative to its parent notification */
+  top: 0; /* Align the button to the top of the notification */
+  right: 5px; /* Adjust the right offset as needed */
+  background-color: #007bff;
+  border: 1px solid #ced4da;
+  color: white;
+  border-radius: 5px;
+  box-sizing: border-box; /* Include padding and border in the total width */
+  padding: 5px 10px; /* Increase padding for bigger button */
+  font-size: 12px; /* Increase font size for bigger button */
+  margin-top: 7px;
+  margin-left:10px;
+}
+
+
+
+.new-notification::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #FF0000;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+
+.notification-option label {
+  margin-right: 10px; /* Adjust spacing between label and checkbox */
+
+}
